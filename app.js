@@ -14,63 +14,44 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-function promptUser() {
-    return inquirer.prompt([
-        {
-          type: 'input',
-          name: 'name',
-          message: "What the employee's name?"
-        }
-        // {
-        //   type: 'input',
-        //   name: 'title',
-        //   message: 'What is the title of your project?'
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'description',
-        //   message: 'Please breifly describe your project.'
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'instructions',
-        //   message: 'What are you program instructions?'
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'liscenses',
-        //   message: 'Please provide liscense information.'
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'tests',
-        //   message: 'Provide details on your tests and how to run them.'
-        // },
-        // {
-        //   type: 'input',
-        //   name: 'acknowledgments',
-        //   message: 'This is the place to list any special shout outs to others that made this project possible.'
-        // }
+// function getEmployee() {
+//     inquirer
+//     .prompt(menuQuestions)
+//     .then(({userChoice}) => {
+//         switch (userChoice) {
+//             case 'Engineer':
+//                 getEngineer();
+//                 break;
+//             case 'Intern':
+//                 getIntern();
+//                 break;
+//             case 'manager':
+//                 displayHtml(employeeList);
+//                 break;
+//         }
+//     })
+// }
+// ​
+// function getEngineer() {
+//     inquirer
+//     .prompt(employeeQuestions.concat(engineerQuestions))
+//     .then(({name, id, email, githubUsername}) => {
+//         let engineer = new Engineer(name, id, email, githubUsername);
+//         employeeList.push(engineer);
+//         getEmployee();
+//     })
+// }
+// ​
+// function getIntern() {
+//     inquirer
+//     .prompt(employeeQuestions.concat(internQuestions))
+//     .then(({name, id, email, school}) => {
+//         let intern = new Intern(name, id, email, school);
+//         employeeList.push(intern)
+//         getEmployee();
+//     })
+// }
 
-    ]);
-}
-
-async function init() {
-    try {
-        // Answers not avialable until after inquierer prompt.
-        const answers = await promptUser();
-        // Cannot create text for readme, unitl after answers and api data are made available and fead into readme template. 
-        // const text = await generateREADME(answers);
-        // // Readme file will be written to file system using data from text variable and the async promis wll be fullfilled.
-        // await writeFileAsync("README.md", text);
-        // // Console log success when readme is written to filesystem. Othewise error.
-        // console.log("Successfully wrote to README.md");
-      } catch(err) {
-        console.log(err);
-      }
-  }
-  // Initiates process.
-  init();
   
 // ​
 // After the user has input all employees desired, call the `render` function (required
